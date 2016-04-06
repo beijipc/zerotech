@@ -1,0 +1,9 @@
+.DS_Store
+.DS_Store?
+._*
+Thumbs.db
+wordpress/wp-config.php
+wordpress/wp-admin
+wordpress/wp-includes
+wordpress/wp-content/uploads/*
+wordpress/wp-content/languages
