@@ -3,9 +3,9 @@
 ._*
 Thumbs.db
 wordpress/*.*
-wordpress/wp-config.php
 wordpress/wp-admin
 wordpress/wp-includes
+wordpress/wp-content/index.php
 wordpress/wp-content/uploads
 wordpress/wp-content/upgrade
 wordpress/wp-content/languages
