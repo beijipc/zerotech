@@ -1,0 +1,95 @@
+
+#adminmenu .menu-icon-product div.wp-menu-image:before {
+    content: "\f115";
+}
+
+#adminmenu .menu-icon-designer div.wp-menu-image:before {
+    content: "\f307";
+}
+
+#adminmenu .menu-icon-event div.wp-menu-image:before {
+    content: '\f123';
+}
+
+#adminmenu .menu-icon-slideshow div.wp-menu-image:before {
+    content: "\f236";
+}
+
+#adminmenu .menu-icon-brand div.wp-menu-image:before {
+    content: "\f164";
+}
+
+#adminmenu .menu-icon-job div.wp-menu-image:before {
+   content: "\f338";
+}
+#adminmenu .menu-icon-work div.wp-menu-image:before {
+    content: "\f155";
+}
+#adminmenu .menu-icon-art div.wp-menu-image:before {
+    content: "\f161";
+}
+#adminmenu .menu-icon-exhibition div.wp-menu-image:before {
+    content: "\f319";
+}
+#adminmenu .menu-icon-home div.wp-menu-image:before {
+    content: "\f233";
+}
+
+.column-thumb_image img,
+.column-cover-image img{
+    width: 100px;
+    height: auto;
+}
+
+#adminmenu .wp-menu-image img{
+	display: none;
+}
+
+/*#tagsdiv-fashion_genre{
+	display: none;
+}
+.acf_postbox .field textarea#acf-field-title_cn,
+.acf_postbox .field textarea#acf-field-title_en{
+	min-height:inherit;
+}*/
+
+
+/*文章编辑页 图集 隐藏字段*/
+/*.post-php .field_type-gallery .thumbnail .list-data tr:nth-child(2){
+	display: none;
+}*/
+
+/*文章图集字段设置*/
+/*
+.media-modal .media-sidebar .setting span{
+    display: block;
+    position: relative;
+    width: 20%;
+    height: 25px;
+    text-indent:-100px;
+    text-align: left;
+}
+.media-modal .media-sidebar .setting span:after{
+    text-align: right;
+    position: absolute;
+    left: 0;
+    top: 0;
+    display: block;
+    width: 100%;
+    height: 100%;
+    line-height: 25px;
+}
+.media-modal .media-sidebar .setting[data-setting*="title"] span:after{
+    content: '标题';
+}
+.media-modal .media-sidebar .setting[data-setting*="caption"] span:after{
+    content: '中文描述';
+}
+.media-modal .media-sidebar .setting[data-setting*="description"] span:after{
+    content: '英文描述';
+}
+.media-modal .media-sidebar .setting[data-setting*="alt"]{
+	display: none;
+}
+*/
+

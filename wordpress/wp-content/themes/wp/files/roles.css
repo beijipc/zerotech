@@ -1,0 +1,30 @@
+.update-nag,
+#contextual-help-link-wrap,
+#ngg_social_media,
+.ngg-wrap #ngg_twitter_follow,
+.ngg-wrap #dashboard_plugins,
+.ngg-wrap #side-container,
+.ngg-wrap #dashboard_primary,
+#menu-comments,
+#menu-tools,
+#menu-posts,
+#menu-pages li:last-child,
+#wp-admin-bar-new-post,
+#wp-admin-bar-comments,
+#wp-admin-bar-wp-logo,
+#wp-admin-bar-new-page,
+#wpfooter{
+    display: none;
+}
+
+/* nng admin */
+.ngg-wrap #main-container {
+    width: 100% !important;
+}
+/*#slider.wrap{
+    margin-top: 30px !important;
+    margin-right: 30px;
+}
+#slider .ui-tabs-panel{
+    padding: 10px 30px;
+}*/
