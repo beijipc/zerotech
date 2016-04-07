@@ -12,6 +12,8 @@ function mytheme_setup() {
 		'secondary'  => '底导航',
 	) );
 
+  add_customize_image_size();
+
 	//定制筛选器
   add_action( 'restrict_manage_posts', 'custom_add_taxonomy_filters' );
 
@@ -79,7 +81,7 @@ function custom_add_taxonomy_filters(){
 
 	switch ($typenow) {
     case 'product':
-      add_taxonomy_filters('taxonomy_product');
+      add_taxonomy_filters('product_tax');
       break;
 		default:
       break;
@@ -121,21 +123,26 @@ function posts_custom_columns_counts($column_name, $id){
 }
 // 注册缩略图规则
 function add_customize_image_size(){
-  add_theme_support('post-thumbnails');
-  set_post_thumbnail_size( 100, 100, true );
+  // add_theme_support('post-thumbnails');
+  // set_post_thumbnail_size( 100, 100, true );
 
-  //默认已存在 thumbnail, medium, large, full 四个尺寸规则
-  //add_image_size( 'admin-list-thumbnail', '100', '100', false );
-
-	//产品图尺寸 1：1
-	add_image_size( '840x840', '840', '840', true );
+  //默认已存在 thumbnail:150x150, medium:300x300, large:1024x1024, full 四个尺寸规则
+  //
+	//1:1
+	add_image_size( '640x640', '640', '640', true );
 	add_image_size( '350x350', '350', '350', true );
+  //最小的图使用size: thumbnail
 
-	//页头图尺寸  16：7.5
-	add_image_size( '1600x750', '1600', '750', true );
-	add_image_size( '1200x563', '1200', '563', true );
-	add_image_size( '600x281', '600', '281', true );//品牌缩略图
-	add_image_size( '200x94', '200', '94', true );//溢美家主菜单
+	//16:9
+  add_image_size( '1600x900', '1600', '900', true );
+	add_image_size( '1280x720', '1280', '720', true );
+	add_image_size( '480x270', '480', '270', true );
+
+  //header
+	add_image_size( '1500x420', '1500', '420', true );
+
+  //background
+  add_image_size( '1600x1200', '1600', '1200', true );
 
 }
 

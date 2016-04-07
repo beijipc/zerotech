@@ -613,6 +613,15 @@ class WPMenuEditor extends MenuEd_ShadowPluginFramework {
 		//Lodash library
 		wp_register_auto_versioned_script('ame-lodash', plugins_url('js/lodash.min.js', $this->plugin_file));
 
+		//Move admin notices (e.g. "Settings saved") below editor tabs.
+		//This is a separate script because it has to run after common.js which is loaded in the page footer.
+		wp_enqueue_auto_versioned_script(
+			'ame-editor-tab-fix',
+			plugins_url('js/editor-tab-fix.js', $this->plugin_file),
+			array('jquery', 'common'),
+			true
+		);
+
 		//Actor manager.
 		wp_register_auto_versioned_script(
 			'ame-actor-manager',
@@ -741,7 +750,7 @@ class WPMenuEditor extends MenuEd_ShadowPluginFramework {
 			'dashiconsAvailable' => wp_style_is('dashicons', 'registered'),
 			'captionShowAdvanced' => 'Show advanced options',
 			'captionHideAdvanced' => 'Hide advanced options',
-			'wsMenuEditorPro' => false, //Will be overwritten if extras are loaded
+			'wsMenuEditorPro' => $this->is_pro_version(), //Will be overwritten if extras are loaded
 			'menuFormatName' => ameMenu::format_name,
 			'menuFormatVersion' => ameMenu::format_version,
 
@@ -2688,8 +2697,8 @@ class WPMenuEditor extends MenuEd_ShadowPluginFramework {
 		wp_enqueue_script(
 			'ame-helper-script',
 			plugins_url('js/admin-helpers.js', $this->plugin_file),
-			array('jquery', 'common'),
-			'20160402'
+			array('jquery'),
+			'20160407-2'
 		);
 
 		//The helper script needs to know the custom page heading (if any) to apply it.
