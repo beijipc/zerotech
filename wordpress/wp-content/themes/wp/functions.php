@@ -111,6 +111,7 @@ function posts_custom_columns_counts($column_name, $id){
 //		 	    		$url = $image['sizes']['admin-list-thumbnail'];
 //              echo "<img src='".$url."' />";
 //              endif;
+             echo "aaaa";
             break;
      case 'lan_status' :
 //        $lan = get_field("switch_lan");
