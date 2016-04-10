@@ -83,10 +83,20 @@ function custom_add_taxonomy_filters(){
     case 'product':
       add_taxonomy_filters('product_tax');
       break;
+    case 'event':
+      add_taxonomy_filters('news_tax');
+      break;
+    case 'faq':
+      add_taxonomy_filters('faq_tax');
+      break;
+    case 'download':
+      add_taxonomy_filters('download_tax');
+      break;
 		default:
       break;
   }
 }
+
 
 // 定制列表页的列
 function posts_columns_counts($defaults){
@@ -106,12 +116,11 @@ function posts_custom_columns_counts($column_name, $id){
 
     switch ( $column_name ) {
 		 case 'thumb_image' :
-//              $image = get_field('image');
-//              if($image):
-//		 	    		$url = $image['sizes']['admin-list-thumbnail'];
-//              echo "<img src='".$url."' />";
-//              endif;
-             echo "aaaa";
+             $image = get_field('cover');
+             if($image):
+		 	    		$url = $image['sizes']['medium'];
+             echo "<img src='".$url."' width='60px' />";
+             endif;
             break;
      case 'lan_status' :
 //        $lan = get_field("switch_lan");
@@ -122,6 +131,49 @@ function posts_custom_columns_counts($column_name, $id){
             break;
     }
 }
+
+function download_connection_type(){
+  p2p_register_connection_type( array(
+    'name'        => "download_to_product",
+    'from'        => "download",
+    'to'          => "product",
+    'admin_box'   => array( 'context' => 'advanced' ),
+    'title'       => array( 'from'  => '适用产品', 'to' => '相关下载' ),
+    'from_labels' => array(
+      'search'    => '搜索文件',
+      'no_found'  => '没有找到',
+      'create'    => '添加'
+    ),
+    'to_labels' => array(
+      'search'    => '搜索产品',
+      'no_found'  => '没有找到',
+      'create'    => '添加'
+    ),
+  ) );
+}
+add_action( 'p2p_init', 'download_connection_type' );
+
+function faq_connection_type(){
+  p2p_register_connection_type( array(
+    'name'        => "faq_to_product",
+    'from'        => "faq",
+    'to'          => "product",
+    'admin_box'   => array( 'context' => 'advanced' ),
+    'title'       => array( 'from'  => '适用产品', 'to' => '相关问答' ),
+    'from_labels' => array(
+      'search'    => '搜索问答',
+      'no_found'  => '没有找到',
+      'create'    => '添加'
+    ),
+    'to_labels' => array(
+      'search'    => '搜索产品',
+      'no_found'  => '没有找到',
+      'create'    => '添加'
+    ),
+  ) );
+}
+add_action( 'p2p_init', 'faq_connection_type' );
+
 // 注册缩略图规则
 function add_customize_image_size(){
   // add_theme_support('post-thumbnails');

@@ -58,7 +58,7 @@ function custom_login(){
 //登录LOGO链接
 function custom_login_logo_url($url) {
     //在此输入你需要链接到的URL地址
-    return get_bloginfo('siteurl');
+    return get_bloginfo('url');
 }
 
 //定制后台head
